@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.2 (Python 3.10.0 on win32)" generated="20211202 08:49:27.309" rpa="false" schemaversion="2">
+<suite id="s1" name="TesteSydleBDD" source="C:\TesteSydle\tests\TesteSydleBDD.robot">
+<kw name="Abrir Sessao" library="Resource" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20211202 08:49:28.362" level="INFO">Opening browser 'chrome' to base url 'https://ericsson-dev.sydle.one/'.</msg>
+<status status="PASS" starttime="20211202 08:49:28.361" endtime="20211202 08:49:33.865"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20211202 08:49:33.866" endtime="20211202 08:49:34.115"/>
+</kw>
+<status status="PASS" starttime="20211202 08:49:28.361" endtime="20211202 08:49:34.116"/>
+</kw>
+<test id="s1-t1" name="Caso de Teste 01: Logar no ambiente da Sydle">
+<kw name="Dado que eu efetue o login" library="Resource">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${LOGIN}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211202 08:49:34.119" endtime="20211202 08:49:35.697"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${LOGIN}</arg>
+<arg>rpa.sydle</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211202 08:49:35.698" level="INFO">Typing text 'rpa.sydle' into text field 'name=login'.</msg>
+<status status="PASS" starttime="20211202 08:49:35.697" endtime="20211202 08:49:35.975"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${PASSWORD}</arg>
+<arg>123456</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211202 08:49:35.977" level="INFO">Typing text '123456' into text field 'name=password'.</msg>
+<status status="PASS" starttime="20211202 08:49:35.976" endtime="20211202 08:49:36.138"/>
+</kw>
+<status status="PASS" starttime="20211202 08:49:34.118" endtime="20211202 08:49:36.139"/>
+</kw>
+<kw name="Quando eu logar no ambiente da Sydle" library="Resource">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>xpath=/html/body/sy-root/div/sy-login/div[1]/div/div/form/button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20211202 08:49:36.144" level="INFO">Clicking button 'xpath=/html/body/sy-root/div/sy-login/div[1]/div/div/form/button'.</msg>
+<status status="PASS" starttime="20211202 08:49:36.143" endtime="20211202 08:49:36.286"/>
+</kw>
+<status status="PASS" starttime="20211202 08:49:36.142" endtime="20211202 08:49:36.287"/>
+</kw>
+<kw name="Então eu devo verificar se a página Home foi exibida" library="Resource">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>css=#sy-header &gt; div &gt; div.sy-title-column.col.s4.truncate &gt; div &gt; span</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211202 08:49:36.296" endtime="20211202 08:49:38.453"/>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>SYDLE ONE</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20211202 08:49:38.471" level="INFO">Page title is 'SYDLE ONE'.</msg>
+<status status="PASS" starttime="20211202 08:49:38.453" endtime="20211202 08:49:38.471"/>
+</kw>
+<status status="PASS" starttime="20211202 08:49:36.295" endtime="20211202 08:49:38.472"/>
+</kw>
+<status status="PASS" starttime="20211202 08:49:34.116" endtime="20211202 08:49:38.472"/>
+</test>
+<test id="s1-t2" name="Caso de Teste 02: Entrar em Explorer no menu sidebar">
+<kw name="Dado que eu esteje na página Home da Sydle" library="Resource">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>css=#sy-header &gt; div &gt; div.sy-title-column.col.s4.truncate &gt; span &gt; button</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211202 08:49:38.479" endtime="20211202 08:49:38.521"/>
+</kw>
+<status status="PASS" starttime="20211202 08:49:38.478" endtime="20211202 08:49:38.521"/>
+</kw>
+<kw name="Quando eu clicar no botão para exibir o sidebar" library="Resource">
+<kw name="Sleep" library="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20211202 08:49:41.530" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20211202 08:49:38.523" endtime="20211202 08:49:41.531"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>css=#sy-header &gt; div &gt; div.sy-title-column.col.s4.truncate &gt; span &gt; button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20211202 08:49:41.531" level="INFO">Clicking button 'css=#sy-header &gt; div &gt; div.sy-title-column.col.s4.truncate &gt; span &gt; button'.</msg>
+<status status="PASS" starttime="20211202 08:49:41.531" endtime="20211202 08:49:42.406"/>
+</kw>
+<status status="PASS" starttime="20211202 08:49:38.522" endtime="20211202 08:49:42.406"/>
+</kw>
+<kw name="Então eu devo clicar em Explorer" library="Resource">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>css=#workspace-list &gt; ul &gt; li:nth-child(8) &gt; a &gt; span</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211202 08:49:42.409" endtime="20211202 08:49:42.802"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>css=#workspace-list &gt; ul &gt; li:nth-child(8) &gt; a &gt; span</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211202 08:49:42.803" level="INFO">Clicking element 'css=#workspace-list &gt; ul &gt; li:nth-child(8) &gt; a &gt; span'.</msg>
+<status status="PASS" starttime="20211202 08:49:42.802" endtime="20211202 08:49:43.072"/>
+</kw>
+<status status="PASS" starttime="20211202 08:49:42.407" endtime="20211202 08:49:43.073"/>
+</kw>
+<status status="PASS" starttime="20211202 08:49:38.475" endtime="20211202 08:49:43.077"/>
+</test>
+<test id="s1-t3" name="Caso de Teste 03: Pesquisar e clicar no produto">
+<kw name="Dado que eu clique no + para Pesquisar" library="Resource">
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20211202 08:49:48.093" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20211202 08:49:43.087" endtime="20211202 08:49:48.095"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>css=#sy-header &gt; div &gt; div.sy-button-column.col.s8 &gt; div &gt; button.ti-plus.btn-flat.header-add-object-button.ng-star-inserted</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211202 08:49:48.096" endtime="20211202 08:49:48.181"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>css=#sy-header &gt; div &gt; div.sy-button-column.col.s8 &gt; div &gt; button.ti-plus.btn-flat.header-add-object-button.ng-star-inserted</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211202 08:49:48.182" level="INFO">Clicking element 'css=#sy-header &gt; div &gt; div.sy-button-column.col.s8 &gt; div &gt; button.ti-plus.btn-flat.header-add-object-button.ng-star-inserted'.</msg>
+<status status="PASS" starttime="20211202 08:49:48.182" endtime="20211202 08:49:48.957"/>
+</kw>
+<status status="PASS" starttime="20211202 08:49:43.086" endtime="20211202 08:49:48.958"/>
+</kw>
+<kw name="Quando eu clicar na categoria todos e digitar &quot;Retirada de Pendências&quot; na barra de pesquisa" library="Resource" sourcename="Quando eu clicar na categoria todos e digitar &quot;${OBJETO_PESQUISADO}&quot; na barra de pesquisa">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>css=#sy-header &gt; div &gt; div.sy-button-column.col.s8 &gt; sy-creation-menu &gt; div &gt; div &gt; p-tabview &gt; div &gt; ul &gt; li:nth-child(2) &gt; a &gt; span</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211202 08:49:48.982" endtime="20211202 08:49:49.678"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>css=#sy-header &gt; div &gt; div.sy-button-column.col.s8 &gt; sy-creation-menu &gt; div &gt; div &gt; p-tabview &gt; div &gt; ul &gt; li:nth-child(2) &gt; a &gt; span</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211202 08:49:49.679" level="INFO">Clicking element 'css=#sy-header &gt; div &gt; div.sy-button-column.col.s8 &gt; sy-creation-menu &gt; div &gt; div &gt; p-tabview &gt; div &gt; ul &gt; li:nth-child(2) &gt; a &gt; span'.</msg>
+<status status="PASS" starttime="20211202 08:49:49.679" endtime="20211202 08:49:49.848"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20211202 08:49:52.860" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20211202 08:49:49.849" endtime="20211202 08:49:52.860"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>css=#sy-header &gt; div &gt; div.sy-button-column.col.s8 &gt; sy-creation-menu &gt; div &gt; div &gt; p-tabview &gt; div &gt; div &gt; p-tabpanel:nth-child(2) &gt; div &gt; div &gt; div.search-box &gt; input</arg>
+<arg>${OBJETO_PESQUISADO}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211202 08:49:52.861" level="INFO">Typing text 'Retirada de Pendências' into text field 'css=#sy-header &gt; div &gt; div.sy-button-column.col.s8 &gt; sy-creation-menu &gt; div &gt; div &gt; p-tabview &gt; div &gt; div &gt; p-tabpanel:nth-child(2) &gt; div &gt; div &gt; div.search-box &gt; input'.</msg>
+<status status="PASS" starttime="20211202 08:49:52.860" endtime="20211202 08:49:53.197"/>
+</kw>
+<status status="PASS" starttime="20211202 08:49:48.981" endtime="20211202 08:49:53.197"/>
+</kw>
+<kw name="Então eu devo clicar no botão de pesquisar e clicar no Objeto" library="Resource">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>css=#sy-header &gt; div &gt; div.sy-button-column.col.s8 &gt; sy-creation-menu &gt; div &gt; div &gt; p-tabview &gt; div &gt; div &gt; p-tabpanel:nth-child(2) &gt; div &gt; div &gt; div.search-box &gt; span</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211202 08:49:53.200" endtime="20211202 08:49:53.246"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>css=#sy-header &gt; div &gt; div.sy-button-column.col.s8 &gt; sy-creation-menu &gt; div &gt; div &gt; p-tabview &gt; div &gt; div &gt; p-tabpanel:nth-child(2) &gt; div &gt; div &gt; div.search-box &gt; span</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211202 08:49:53.247" level="INFO">Clicking element 'css=#sy-header &gt; div &gt; div.sy-button-column.col.s8 &gt; sy-creation-menu &gt; div &gt; div &gt; p-tabview &gt; div &gt; div &gt; p-tabpanel:nth-child(2) &gt; div &gt; div &gt; div.search-box &gt; span'.</msg>
+<status status="PASS" starttime="20211202 08:49:53.246" endtime="20211202 08:49:53.383"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>css=#sy-header &gt; div &gt; div.sy-button-column.col.s8 &gt; sy-creation-menu &gt; div &gt; div &gt; p-tabview &gt; div &gt; div &gt; p-tabpanel:nth-child(2) &gt; div &gt; div &gt; div.menu-container.all-container &gt; a:nth-child(1) &gt; span.class-name</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211202 08:49:53.383" endtime="20211202 08:49:53.687"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>css=#sy-header &gt; div &gt; div.sy-button-column.col.s8 &gt; sy-creation-menu &gt; div &gt; div &gt; p-tabview &gt; div &gt; div &gt; p-tabpanel:nth-child(2) &gt; div &gt; div &gt; div.menu-container.all-container &gt; a:nth-child(1) &gt; span.class-name</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211202 08:49:53.688" level="INFO">Clicking element 'css=#sy-header &gt; div &gt; div.sy-button-column.col.s8 &gt; sy-creation-menu &gt; div &gt; div &gt; p-tabview &gt; div &gt; div &gt; p-tabpanel:nth-child(2) &gt; div &gt; div &gt; div.menu-container.all-container &gt; a:nth-child(1) &gt; span.class-name'.</msg>
+<status status="PASS" starttime="20211202 08:49:53.688" endtime="20211202 08:49:53.884"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20211202 08:49:58.895" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20211202 08:49:53.885" endtime="20211202 08:49:58.896"/>
+</kw>
+<status status="PASS" starttime="20211202 08:49:53.199" endtime="20211202 08:49:58.896"/>
+</kw>
+<status status="PASS" starttime="20211202 08:49:43.079" endtime="20211202 08:49:58.897"/>
+</test>
+<test id="s1-t4" name="Caso de Teste 04: Preencher e concluir a obra">
+<kw name="Dado que eu clique nos campos da obra" library="Resource">
+<kw name="Select Frame" library="SeleniumLibrary">
+<arg>xpath=//iframe[@slotid='5a27e943642bd12b6de3239d']</arg>
+<doc>Sets frame identified by ``locator`` as the current frame.</doc>
+<msg timestamp="20211202 08:49:58.902" level="INFO">Selecting frame 'xpath=//iframe[@slotid='5a27e943642bd12b6de3239d']'.</msg>
+<status status="PASS" starttime="20211202 08:49:58.902" endtime="20211202 08:49:58.953"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>xpath=/html/body/sy-root/div/sy-draft-edit/div/div[2]/div[2]/form/sy-fields/div/div[19]/div/sy-field/fieldset/sy-single-field/div/div/sy-input-reference/div/div/div/p-dropdown/div/div[3]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211202 08:49:58.954" endtime="20211202 08:49:58.993"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=/html/body/sy-root/div/sy-draft-edit/div/div[2]/div[2]/form/sy-fields/div/div[19]/div/sy-field/fieldset/sy-single-field/div/div/sy-input-reference/div/div/div/p-dropdown/div/div[3]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211202 08:49:58.993" level="INFO">Clicking element 'xpath=/html/body/sy-root/div/sy-draft-edit/div/div[2]/div[2]/form/sy-fields/div/div[19]/div/sy-field/fieldset/sy-single-field/div/div/sy-input-reference/div/div/div/p-dropdown/div/div[3]'.</msg>
+<status status="PASS" starttime="20211202 08:49:58.993" endtime="20211202 08:49:59.195"/>
+</kw>
+<kw name="Get Select List Label">
+<arg>xpath=//*[@id="b075830b-9ebe-4839-8551-17d77c82572ftarget"]/li</arg>
+<arg>Civil Works / Biosite / 10.104 / RSU SPC / CLARO / SMSMT53 / Fornecedor Teste 5cffc13dfdfd4a512f065072 / tvcbUQwem5</arg>
+<msg timestamp="20211202 08:49:59.208" level="FAIL">No keyword with name 'Get Select List Label' found. Did you mean:
+    SeleniumLibrary.Get Selected List Label
+    SeleniumLibrary.Get Selected List Labels</msg>
+<status status="FAIL" starttime="20211202 08:49:59.208" endtime="20211202 08:49:59.209"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=titulo</arg>
+<arg>Teste</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20211202 08:49:59.211" endtime="20211202 08:49:59.211"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=descricao</arg>
+<arg>Teste</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20211202 08:49:59.211" endtime="20211202 08:49:59.211"/>
+</kw>
+<status status="FAIL" starttime="20211202 08:49:58.901" endtime="20211202 08:49:59.213"/>
+</kw>
+<status status="FAIL" starttime="20211202 08:49:58.900" endtime="20211202 08:49:59.214">No keyword with name 'Get Select List Label' found. Did you mean:
+    SeleniumLibrary.Get Selected List Label
+    SeleniumLibrary.Get Selected List Labels</status>
+</test>
+<status status="FAIL" starttime="20211202 08:49:27.312" endtime="20211202 08:49:59.219"/>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="3" fail="1" skip="0" id="s1" name="TesteSydleBDD">TesteSydleBDD</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
